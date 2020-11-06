@@ -1,3 +1,25 @@
 * {
-    
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    background-image: url('./images/shutterstock_148972376.width-800.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    padding: 15px;
+    margin: 12%;
+    background-color: lightslategray;
+    color: #333;
+    border-style: groove;
+    border-color: black;
+}
+
+p {
+    text-align: center;
 }
