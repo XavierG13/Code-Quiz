@@ -115,7 +115,14 @@ function compare(event) {
 }
 
 
+if (secondsLeft >= 0) {
+    var timeRemaining = secondsLeft;
+    var createP2 = document.createElement("p");
+    clearInterval(holdInterval);
+    createP2.textContent = "Your final score is: " + timeRemaining;
 
+    questionsDiv.appendChild(createP2);
+}
 
 
 
