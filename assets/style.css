@@ -19,6 +19,23 @@ body {
     border-style: groove;
     border-color: black;
 }
+.wrapper {
+    padding: 15px;
+    margin: 12%;
+    background-color: lightslategray;
+    color: #333;
+    border-style: groove;
+    border-color: black;
+}
+
+#high-scores {
+    border-style: groove;
+    border-color: #333;
+    background-color: lightslategray;
+    color: #333;
+    margin-top: 10px;
+    padding: 10px;
+}
 
 p {
     text-align: center;

@@ -22,30 +22,34 @@
 
 <body>
 
+    <a href="./highscores.html" id="high-scores">View High SCores</a>
     <div id="quiz-holder" class="container align-content-center">
+
+        <div id="currentTime"></div>
+
         <div class="row justify-content-center">
             <h1 id="code-quiz">Code Quiz</h1>
         </div>
 
+        <hr>
+
         <div class="row">
-            <h2 id="good-luck">
+            <h2 id="questions">
                 <p>This is a timed quiz.</p>
+                <p>During this quiz you will be tested on your knowledge of HTML, Javascript, and CSS.</p>
 
-                <hr>
-
-                <p>During this quiz you will be tested on your knowledge of HTML, Javascript, and CSS. For every
-                    question you get correct you will recieve one point, however you till lose 15 seconds for
-                    each incorrect question.
-                </p>
-
-                <hr>
+                <p>For every question you get correct you will recieve one point, however you till lose 15 seconds for
+                    each incorrect question.</p>
 
                 <p>Good luck!</p>
             </h2>
+
+            <ul id="q-choices"></ul>
+
         </div>
+
         <div id="startup" class="row justify-content-center">
-            <button id="begin-quiz">Begin</button>
-            <button id="view-scores">High Scores</button>
+            <button id="beginTimer">Begin</button>
         </div>
 
         <div id="results"></div>
