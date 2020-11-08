@@ -19,13 +19,14 @@ body {
     border-style: groove;
     border-color: black;
 }
-.wrapper {
+#wrapper {
     padding: 15px;
     margin: 12%;
     background-color: lightslategray;
     color: #333;
     border-style: groove;
     border-color: black;
+    text-align: center;
 }
 
 #high-scores {

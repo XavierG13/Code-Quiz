@@ -1,14 +1,14 @@
 // VARIABLES
 var questions = [
     {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        title: "What does HTML stand for?",
+        choices: ["Here Make Language", "Hypertext Makeup Language", "How To Make Language", "Here Then Make Language"],
+        answer: "Hypertext Makeup Language"
     },
     {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        title: "What does the symbol # refer to?",
+        choices: ["quotes", "class", "parentheses", "id"],
+        answer: "id"
     },
     {
         title: "Arrays in Javascript can be used to store ____.",
@@ -16,9 +16,9 @@ var questions = [
         answer: "all of the above"
     },
     {
-        title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-        answer: "quotes"
+        title: "What does CSS stand for?",
+        choices: ["Case Sensitive Styles", "Can Style Stuff", "Cascade Sheet Styling", "Cascading Style Sheets"],
+        answer: "Cascading Style Sheets"
     },
     {
         title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
@@ -110,10 +110,11 @@ function compare(event) {
     } else {
         render(questionIndex);
     }
-    questionsDiv.appendChild(createDiv);
+    questionsEl.appendChild(createDiv);
 
 }
 
+var questionDiv = document.getElementById("#questionDiv");
 
 if (secondsLeft >= 0) {
     var timeRemaining = secondsLeft;
@@ -121,7 +122,7 @@ if (secondsLeft >= 0) {
     clearInterval(holdInterval);
     createP2.textContent = "Your final score is: " + timeRemaining;
 
-    questionsEl.appendChild(createP2);
+    questionsDiv.appendChild(createP2);
 }
 
 
@@ -129,7 +130,7 @@ var createLabel = document.createElement("label");
 createLabel.setAttribute("id", "createLabel");
 createLabel.textContent = "Enter your initials: ";
 
-questionsEl.appendChild(createLabel);
+questionsDiv.appendChild(createLabel);
 
 
 var createInput = document.createElement("input");
@@ -137,7 +138,7 @@ createInput.setAttribute("type", "text");
 createInput.setAttribute("id", "initials");
 createInput.textContent = "";
 
-questionsEl.appendChild(createInput);
+questionsDiv.appendChild(createInput);
 
 
 var createSubmit = document.createElement("button");
@@ -145,7 +146,7 @@ createSubmit.setAttribute("type", "submit");
 createSubmit.setAttribute("id", "Submit");
 createSubmit.textContent = "Submit";
 
-questionsEl.appendChild(createSubmit);
+questionsDiv.appendChild(createSubmit);
 
 
 createSubmit.addEventListener("click", function () {
