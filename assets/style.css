@@ -5,39 +5,8 @@
 body {
     margin: auto;
     padding: 0;
-    background-image: url('./images/shutterstock_148972376.width-800.jpg');
+    background-image: url("assets\images\images\shutterstock_148972376.width-800.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-
-.container {
-    padding: 15px;
-    margin: 12%;
-    background-color: lightslategray;
-    color: #333;
-    border-style: groove;
-    border-color: black;
-}
-#wrapper {
-    padding: 15px;
-    margin: 12%;
-    background-color: lightslategray;
-    color: #333;
-    border-style: groove;
-    border-color: black;
-    text-align: center;
-}
-
-#high-scores {
-    border-style: groove;
-    border-color: #333;
-    background-color: lightslategray;
-    color: #333;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-p {
-    text-align: center;
 }
