@@ -53,7 +53,7 @@ timeEl.addEventListener.on("click", function () {
     if (timer === 0) {
         timer.setInterval(function () {
             secondsLeft--;
-            timerHolder.creatext = document.getElementById("timer-holder") + secondsLeft;
+            timerHolder.textContent = document.getElementById("timer-holder") + secondsLeft;
             if (secondsLeft <= 0) {
                 clearInterval(timer);
                 allDone();
