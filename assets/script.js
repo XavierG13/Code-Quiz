@@ -49,7 +49,7 @@ var questions = [
 ]
 
 // Listeners for buttons
-timeEl.addEventListener.on("click", function () {
+beginQuizBtnEl.addEventListener.on("click", function () {
     if (timer === 0) {
         timer.setInterval(function () {
             secondsLeft--;
@@ -57,11 +57,11 @@ timeEl.addEventListener.on("click", function () {
             if (secondsLeft <= 0) {
                 clearInterval(timer);
                 allDone();
-                currentTime.textContent = "Quiz is over.";
+                timerHolder.textContent = "Quiz is over.";
             }
         }, 1000);
     }
-    render(questions);
+    questions();
 });
 // Functions for questions and answers
 
