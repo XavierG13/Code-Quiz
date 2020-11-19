@@ -52,47 +52,54 @@ var questions = [
 //this will set a timer once the quiz has begun
 function setTime() {
     var timerInterval = setInterval(function () {
-        secondsLeft--;
-        timeEl.textContent = "Time:" + secondsLeft;
 
         if (time === 0) {
-            clearInterval(timerInterval);
-            sendMessage();
-        }
+            time--;
+            timeEl.textContent = "Time:" + time;
 
+            clearInterval(timerInterval);
+        } else {
+
+        }
+        console.log(timeEl);
     }, 1000);
 }
 
 //will alert if the question was correct or incorrect and track the score
-function nextQuestion(currentQuestion) {
+function currentQuestionIndex(currentQuestion) {
     var answer = questions[questionCount].answer;
-    var wrong = createTextNode("Incorrext!");
-    var correct = createTextNode("Correct!");
 
     if (currentQuestion === answer) {
         score++;
-        alert(correct);
 
     } else {
-        alret(wrong);
-
+        subtractTime;
     }
     questionCount++;
     console.log(questionCount);
+    console.log(currentQuestionIndex);
 }
 
-//starts the quiz once the button is clicked
-beginQuizBtnEl.addEventListener("click", function () {
+function renderQuestions() {
+    questionsUlEl.innerHTML = "";
+    questionCount.textContent = questions.length;
 
     for (var i = 0; i < questions.length; i++);
     console.log(questions);
 
     var li = document.createElement("li");
     newQuestion = document.createTextNode(questions[i]);
-    console.log(newQuestion);
 
     li.appendChild(newQuestion);
     questionsUlEl.appendChild(li);
+    renderQuestions();
+}
+
+//starts the quiz once the button is clicked
+beginQuizBtnEl.addEventListener("click", function () {
+    setTime();
+    renderQuestions();
+    currentQuestionIndex();
 })
 
 
