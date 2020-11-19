@@ -1,12 +1,13 @@
 //Variables for beginning and holding quiz questions
-var beginQuizBtnEl = document.getElementById("#beginQuizBtn");
-var questionHolderEl = document.getElementById("#questions");
+var beginQuizBtnEl = document.getElementById("beginQuizBtn");
+var questionHolderEl = document.getElementById("questions");
+var questionsUlEl = document.getElementById("questionsUl");
 //Variables that are used for high scores section
-var highScoresEl = document.getElementById("#highScoresHolder");
-var goBackBtn = document.getElementById("#goBackBtn");
-var clearBtnEl = document.getElementById("#clearBtn");
+var highScoresEl = document.getElementById("highScoresHolder");
+var goBackBtn = document.getElementById("goBackBtn");
+var clearBtnEl = document.getElementById("clearBtn");
 // variables used for the timer
-var timeEl = document.getElementById("#timerHolder");
+var timeEl = document.getElementById("timer");
 
 var time = 75;
 var score = 0;
@@ -48,37 +49,115 @@ var questions = [
 
 ]
 
-// Listeners for buttons
-beginQuizBtnEl.addEventListener.on("click", function () {
-    if (timer === 0) {
-        timer.setInterval(function () {
-            secondsLeft--;
-            timerHolder.textContent = document.getElementById("timer-holder") + secondsLeft;
-            if (secondsLeft <= 0) {
-                clearInterval(timer);
-                allDone();
-                timerHolder.textContent = "Quiz is over.";
-            }
-        }, 1000);
+//this will set a timer once the quiz has begun
+function setTime() {
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.textContent = "Time:" + secondsLeft;
+
+        if (time === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+
+    }, 1000);
+}
+
+//will alert if the question was correct or incorrect and track the score
+function nextQuestion(currentQuestion) {
+    var answer = questions[questionCount].answer;
+    var wrong = createTextNode("Incorrext!");
+    var correct = createTextNode("Correct!");
+
+    if (currentQuestion === answer) {
+        score++;
+        alert(correct);
+
+    } else {
+        alret(wrong);
+
     }
-    questions();
-});
-// Functions for questions and answers
+    questionCount++;
+    console.log(questionCount);
+}
 
-questions.forEach(function (question) {
+//starts the quiz once the button is clicked
+beginQuizBtnEl.addEventListener("click", function () {
 
-    for (i = 0; i < questions.length; i++) {
-        var question = questions.array[i];
+    for (var i = 0; i < questions.length; i++);
+    console.log(questions);
 
-        var li = document.createElement('li');
-        var questionsTextEl = document.createTextNode(question);
+    var li = document.createElement("li");
+    newQuestion = document.createTextNode(questions[i]);
+    console.log(newQuestion);
 
-        li.appendChild(questionsTextEl);
-        document.getElementById("#questionsUl").appendChild(li);
-
-        console.log(question);
-    }
+    li.appendChild(newQuestion);
+    questionsUlEl.appendChild(li);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Listeners for buttons
+// beginQuizBtnEl.addEventListener.on("click", function () {
+//     if (time === 0) {
+//         timer.setInterval(function () {
+//             time--;
+//             console.log(time);
+//             timerHolder.textContent = "Time:" + time;
+//             if (secondsLeft <= 0) {
+//                 clearInterval(timer);
+//                 allDone();
+//                 timeEl.textContent = "Quiz is over.";
+//             }
+//         }, 1000);
+//     }
+//     questions();
+// })
+// // Functions for questions and answers
+
+// questions.forEach(function (question) {
+
+//     for (i = 0; i < questions.length; i++) {
+//         var question = questions.array[i];
+
+//         var li = document.createElement('li');
+//         var questionsTextEl = document.createTextNode(question);
+
+//         li.appendChild(questionsTextEl);
+//         document.getElementById("#questionsUl").appendChild(li);
+
+//         console.log(question);
+//     }
+// });
 // this function will loop through the questions array and move them to the html
 
 
