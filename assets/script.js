@@ -11,7 +11,7 @@ var timeEl = document.getElementById("timer");
 
 var time = 75;
 var score = 0;
-var subtractTime = 15;
+var subtractTime = 10;
 var timer = 0;
 
 // var questions arrary for questions
@@ -57,9 +57,9 @@ function setTime() {
             time--;
             timeEl.textContent = "Time:" + time;
 
-            clearInterval(timerInterval);
-        } else {
+        } if (time <= 0) {
 
+            clearInterval(timerInterval);
         }
         console.log(timeEl);
     }, 1000);
@@ -68,12 +68,14 @@ function setTime() {
 //will alert if the question was correct or incorrect and track the score
 function currentQuestionIndex(currentQuestion) {
     var answer = questions[questionCount].answer;
+    var correctEl = textContent("Correct!");
+    var incorrectEL = textContent("Incorrect!");
 
     if (currentQuestion === answer) {
         score++;
-
+        questionsUlEl.innerHTML(correctEl);
     } else {
-        subtractTime;
+        questionsUlEl.innerHTML(incorrectEL);
     }
     questionCount++;
     console.log(questionCount);
@@ -92,9 +94,9 @@ function renderQuestions() {
 
     li.appendChild(newQuestion);
     questionsUlEl.appendChild(li);
-    renderQuestions();
 }
 
+renderQuestions();
 //starts the quiz once the button is clicked
 beginQuizBtnEl.addEventListener("click", function () {
     setTime();
@@ -140,7 +142,7 @@ beginQuizBtnEl.addEventListener("click", function () {
 //             time--;
 //             console.log(time);
 //             timerHolder.textContent = "Time:" + time;
-//             if (secondsLeft <= 0) {
+//             if (time <= 0) {
 //                 clearInterval(timer);
 //                 allDone();
 //                 timeEl.textContent = "Quiz is over.";
